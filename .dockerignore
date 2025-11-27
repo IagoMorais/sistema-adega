@@ -1,0 +1,78 @@
+# Dependências
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build
+dist
+.build
+*.tsbuildinfo
+
+# Ambiente
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Git
+.git
+.gitignore
+.github
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testes
+coverage
+.nyc_output
+*.test.ts
+*.spec.ts
+__tests__
+__mocks__
+
+# Documentação
+*.md
+!README.md
+docs
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporários
+.tmp
+tmp
+temp
+*.tmp
+
+# Backups (não copiar para imagem, usar volumes)
+backups/*.sql
+
+# Scripts de desenvolvimento
+*.sh
+!start.sh
+
+# Uploads (usar volumes)
+uploads/*
+!uploads/.gitkeep
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Outros
+.prettierrc
+.eslintrc
+.editorconfig
+vitest.config.ts
+vitest.setup.ts

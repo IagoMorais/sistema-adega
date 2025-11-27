@@ -18,10 +18,11 @@ fi
 
 print_info "Iniciando configuração do VPS..."
 
-# 1. Atualizar sistema
-print_info "Atualizando pacotes do sistema..."
+# 1. Atualizar sistema e instalar ferramentas base
+print_info "Atualizando pacotes e instalando ferramentas base..."
 apt update && apt upgrade -y
-print_success "Sistema atualizado"
+apt install -y curl wget git nano unzip htop
+print_success "Sistema atualizado e ferramentas instaladas"
 
 # 2. Configurar Swap (2GB)
 print_info "Verificando Swap..."

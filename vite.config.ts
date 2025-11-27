@@ -15,10 +15,11 @@ const pollingFlag =
 const usePolling = pollingFlag === "1" || pollingFlag === "true";
 const pollingInterval = Number(
   process.env.VITE_POLLING_INTERVAL ??
-    process.env.DEV_POLLING_INTERVAL ??
-    "150",
+  process.env.DEV_POLLING_INTERVAL ??
+  "150",
 );
 export default defineConfig({
+  base: "./",
   plugins: [
     react(),
     runtimeErrorOverlay(),
