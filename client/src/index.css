@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    /* Primary */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    /* Muted */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    /* Accent */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 50%;
+    
+    /* Charts */
+    --chart-1: 210 100% 50%;
+    --chart-2: 259 100% 60%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 338 85% 60%;
+    --chart-5: 150 100% 45%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+  }
+
+  /* Evitando que o dark mode seja aplicado */
+  .dark, [data-theme="dark"] {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: #FFFFFF !important;
+    color: #1A202C !important;
+  }
+
+  /* Sobrescrever navbar com fundo branco */
+  nav {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+  }
+  
+  /* Garantir que o tema claro seja aplicado */
+  html {
+    color-scheme: light;
+    background-color: white;
+  }
+}
+
+@layer components {
+  .product-grid {
+    display: grid;
+    /* Reduzir o tamanho mínimo das colunas */
+    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+    /* Reduzir o espaçamento entre os cards */
+    gap: 0.1rem;
+    /* Reduzir o padding externo */
+    padding: 0.1rem;
+  }
+
+  .product-card {
+    @apply text-xs sm:text-sm p-1 sm:p-1 max-w-[50px];
+  }
+
+  .low-stock-alert {
+    @apply p-1.5 text-xs border-l-2 border-red-500 bg-red-50 dark:bg-red-950/10;
+  }
+}
